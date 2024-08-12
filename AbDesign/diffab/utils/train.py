@@ -361,4 +361,4 @@ def eval_on_dataset(config, dataset, model, logger, save_dir):
     # df.loc['mean'] = df.mean()
     df.to_csv(os.path.join(save_dir, 'results.csv'), float_format='%.2f')
     print(df)
-    return dict(df.mean())
+    return dict(df[['H_CDR3-rmsd', 'H_CDR3-aa_recovery']].mean())
